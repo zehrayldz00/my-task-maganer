@@ -17,7 +17,8 @@ class DialogBox extends StatelessWidget {
     return AlertDialog(
         backgroundColor: Color(0xFFce80db),
         content: Container(
-            height: 120,
+            height: 200,
+            width: 300,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -39,7 +40,7 @@ class DialogBox extends StatelessWidget {
                       width: 4,
                     ),
                     //cancel button
-                    MyButton(text: "Cansel", onPressed: onCancel),
+                    MyButton(text: "Cancel", onPressed: onCancel),
                   ],
                 )
 
