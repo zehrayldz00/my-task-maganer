@@ -7,7 +7,7 @@ class ToDoTile extends StatelessWidget {
   final Function(bool?)? onChanged;
   final Function(BuildContext)? deleteFunction;
 
-  ToDoTile(
+  const ToDoTile(
       {super.key,
       required this.taskName,
       required this.taskCompleted,
@@ -35,14 +35,16 @@ class ToDoTile extends StatelessWidget {
               Checkbox(value: taskCompleted, onChanged: onChanged),
 
               //Task Name
-              Text(
-                taskName,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 25,
-                    decoration: taskCompleted
-                        ? TextDecoration.lineThrough
-                        : TextDecoration.none),
+              Flexible(
+                child: Text(
+                  taskName,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      decoration: taskCompleted
+                          ? TextDecoration.lineThrough
+                          : TextDecoration.none),
+                ),
               ),
             ],
           ),
