@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:todo_app/data/database.dart';
-import 'package:todo_app/util/todo_tile.dart';
+import 'package:todo_app/core/database.dart';
+import 'package:todo_app/features/home/todo_tile.dart';
 
-import '../util/dialog_box.dart';
+import 'dialog_box.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
   //checkbox was tapped
   void checkBoxChanged(bool? value, int index) {
     setState(() {
-      db.toDoList[index][1] = !db.toDoList[index][1];
+      db.toDoList[index][1] = !db.toDoList[index][1]; // if task completed it will be uncompleted , if uncompleted it will be completed
     });
     db.updateDatabase();
   }
